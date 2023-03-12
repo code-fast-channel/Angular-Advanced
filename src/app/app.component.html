@@ -1,0 +1,59 @@
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Title</th>
+        <th scope="col">Selector</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gs of sg;let i= index">
+        <td>{{i+1}}</td>
+         <td>{{gs.title}}</td>
+         <td >{{gs.selector}} <span style="cursor:pointer" class="badge badge-pill badge-primary" (click)="copyToClipboard(gs.selector)">click to copy</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container-fluid">
+    <h1>1) Multiple level checkbox with parent data set value</h1>
+    <app-multi-level-checkbox-setvalue></app-multi-level-checkbox-setvalue>
+  </div>
+  <div class="container-fluid">
+    <h1>2) Multiple level checkbox with parent data</h1>
+    <app-multi-level-checkbox></app-multi-level-checkbox>
+  </div>
+  <div class="container-fluid">
+    <h1>3) Checkbox with search</h1>
+    <app-selectall-checkbox></app-selectall-checkbox>
+  </div>  
+  <div class="container-fluid">
+    <h1>3) Checkbox with maximumsg</h1>
+    <app-maximum-limit-checkbox></app-maximum-limit-checkbox>
+  </div>  
+  <div class="container-fluid">
+    <h1>4) Search data with single inputfieldsgs</h1>
+    <app-search-table-directive></app-search-table-directive>
+  </div>  
+
+  <div class="container-fluid">
+    <h1>5) Ellipsis with titlesg</h1>
+    <app-ellipsis-title></app-ellipsis-title>
+  </div>  
+  <div class="container-fluid">
+    <h1>6) Number only directivegs</h1>
+    <app-number-only-directive></app-number-only-directive>
+  </div>  
+  <div class="container-fluid">
+    <h1>7) Form validation add and remove</h1>
+    <app-dynamic-validation-add-removegs></app-dynamic-validation-add-removegs>
+  </div>  
+  <div class="container-fluid">
+    <h1>8) Custom Validation</h1>
+    <app-custom-validation-sg></app-custom-validation-sg>
+  </div>  
+  <div class="container-fluid">
+    <h1>9) Scroll to error Fieldsgsggs</h1>
+    <app-scroll-into-invalid-field-form></app-scroll-into-invalid-field-form>
+  </div>  
+<!-- <router-outlet></router-outlet> -->
