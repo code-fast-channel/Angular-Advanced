@@ -1,0 +1,42 @@
+<p>scroll-into-invalid-field-form works!</p>
+    <form style="width:50%"  [formGroup]='formName'>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" formControlName='inputName' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <div *ngIf="formName.get('inputName').errors && submitted">
+          <span class="error" *ngIf ="formName.get('inputName')?.errors['required'] && submitted">This field is required</span>
+         </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" formControlName='terms&condition' class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <div *ngIf="formName.get('terms&condition').errors && submitted">
+              <span class="error" *ngIf ="formName.get('terms&condition')?.errors['required'] && submitted">terms & condition is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" formControlName="firstname" id="exampleInputPassword1" placeholder="Password">
+          <div *ngIf="formName.get('firstname').errors && submitted">
+            <span class="error" *ngIf ="formName.get('firstname').errors['required']">This firstname is required</span>
+            </div> 
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" formControlName="lastname" id="exampleInputPassword1" placeholder="Password">
+          <div *ngIf="formName.get('lastname').errors && submitted">
+            <span class="error" *ngIf ="formName.get('lastname').errors['required']">This lastname is required</span>
+            </div> 
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" formControlName="reason" id="exampleInputPassword1" placeholder="Password">
+          <div *ngIf="formName.get('reason').errors && submitted">
+            <span class="error" *ngIf ="formName.get('reason').errors['required']">This reason is required</span>
+            </div> 
+        </div>
+        <button type="submit" (click)="submit()" class="btn btn-primary">Submitt</button>
+      </form>
+      <p> valid: {{ formName.valid }}</p>
+      <p> invalid: {{ formName.invalid }}</p>
+      <p> value: {{ formName.value|json }}</p>

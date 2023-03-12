@@ -1,0 +1,43 @@
+<p>checbox works!</p>
+<label for="name">Name </label>
+<input type="text" id="name" [(ngModel)]="name" />
+<label for="cat">age </label>
+<input type="text" id="cat" [(ngModel)]="category" />
+<br>
+<ul>
+  <li *ngFor="let item of list | search: [name,category]: ['title', 'age'];">
+    <input type="checkbox" [(ngModel)]="item.checked" (change)="result()">{{item.title}}-{{item.age}}
+  </li>
+</ul>
+<p *ngIf="selectedData.length===0">select atleast one</p>
+{{selectedData|json}} 
+{{selectedId|json}}
+ 
+
+
+
+
+
+<br><br>
+<input type="text" (keyup)="search($event.target)">
+<div class="form-group" *ngIf="productListArray.length>0">
+  <div class="custom-control custom-checkbox mr-sm-2">
+    <input type="checkbox" class="custom-control-input" id="checkbox1" (change)="changeGs('selectAll')" [(ngModel)]="selectedAll"/>
+    <label style="cursor: pointer;" class="custom-control-label" for="checkbox1">Select All</label>
+  </div>
+</div>
+<p *ngIf="productListArray.length==0">No data foundgs</p>
+<div class="form-group">
+  <div class="custom-control custom-checkbox mr-sm-2" *ngFor="let data of
+productListArray">
+    <input type="checkbox" class="custom-control-input" (change)="changeGs()" id="{{ data.id }}" [(ngModel)]="data.selected" />
+    <label class="custom-control-label" for="{{ data.id
+}}">{{data.name}}</label>
+  </div>
+</div>
+
+<div *ngFor="let val of filterData">
+  <span>{{val.name}} <button (click)="delete(val)">Remove</button></span>
+  </div>
+  <br>
+<span>{{filterDataId|json}}</span>

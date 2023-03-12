@@ -1,0 +1,10 @@
+<p>maximum-limit-checkbox works!</p>
+<h2>Checkbox list example</h2>
+<ul>
+<li *ngFor="let item of listgs; let i=index">
+<input type="checkbox" [(ngModel)]="item.checked"
+(change)="result($event,item)">{{item.name}}
+</li>
+</ul>
+<pre>{{this.filterdatalist | json}}</pre>
+<pre>{{this.filterdataid | json}}</pre>
