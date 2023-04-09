@@ -1,0 +1,106 @@
+<p>radio-button-sg works!</p>
+
+<h2>simple basic one gs</h2>
+
+<input type="radio" name="gs" id='sgs-1' [(ngModel)]="checkedValGsSimple" [value]="'0'" (change)="changeGSSimple()">
+<!-- name="abc" mention the name to avoid the selection of other radio buttons-->
+<!-- id="abc" and for="abc" make unique to avoid the selection of other places-->
+<!-- or -->
+<!-- name="abc" mention the name to avoid the selection of other radio buttons-->
+<!-- id="attr1-{{item.ids}}{{item.name}}" and for="attr1-{{item.ids}}{{item.name}}" make unique to avoid the selection of other places-->
+
+<label for='sgs-1'>Yes</label>
+<br>
+<input type="radio" name="sg" id='sgs-2' [(ngModel)]="checkedValGsSimple" [value]="21" (change)="changeGSSimple()">
+<label for='sgs-2'>Okay</label>
+<p class="error" *ngIf="!checkedValGsSimple">Please choose a decision</p>
+
+
+
+<br>
+
+
+<h2>multiple with loop one gs</h2>
+<ul>
+    <li *ngFor="let item of example1SG">
+        <input type="radio" [id]="'gs1'+item.id" [(ngModel)]="checkedValGs" [value]="item.id" (change)="changeGS()"
+            [name]="item.title">
+        <!-- name="abc" mention the name to avoid the selection of other radio buttons-->
+        <!-- id="abc" and for="abc" make unique to avoid the selection of other places-->
+        <!-- or -->
+        <!-- name="abc" mention the name to avoid the selection of other radio buttons-->
+        <!-- id="attr1-{{item.ids}}{{item.name}}" and for="attr1-{{item.ids}}{{item.name}}" make unique to avoid the selection of other places-->
+
+        <label [for]="'gs1'+item.id">{{item.title}}-{{item.age}}</label>
+    </li>
+</ul>
+<p class="error" *ngIf="!checkedValGs">Please choose a value</p>
+
+
+
+<h2>multiple with loop one gs without ngmodel</h2>
+<ul>
+    <li *ngFor="let item of example1SG1;let i=index">
+        <input type="radio" [id]="'gs2'+item.id" [checked]="item.checked" [value]="item.id" (change)="changeGS1(i)"
+            [name]="'sgs'+item.title">
+        <label [for]="'gs2'+item.id">{{item.title}}-{{item.age}}</label>
+    </li>
+</ul>
+<p class="error" *ngIf="!checkedValGs">Please choose a value</p>
+
+
+
+<h2>multiple with loop one with child</h2>
+<div class="d-flex">
+    <div>
+        <ul>
+            <li *ngFor="let items of example1SG2;let i=index">
+                <h3>{{items.title}}</h3>
+                <ng-container *ngFor="let item of items.child;let gs=index">
+                    <input type="radio" [id]="'gs2'+item.ids" [checked]="item.checked" [value]="item.id"
+                        (change)="changeGS2(i,gs)" [name]="'sgs'+item.name">
+                    <label [for]="'gs2'+item.ids">{{item.name}}-{{item.checked}}</label>
+                    <br>
+                </ng-container>
+                <br>
+                <br>
+            </li>
+        </ul>
+
+    </div>
+    <div>
+        <div *ngFor="let sg of checkedValGs2">
+            {{sg|json}}
+        </div>
+    </div>
+</div>
+
+
+<h2>multiple with loop one with child check and uncheck</h2>
+<div class="d-flex">
+    <div>
+        <ul>
+            <li *ngFor="let gssg of example1SG3;let i=index">
+                <h3>{{gssg.title}}</h3>
+                <ng-container *ngFor="let item of gssg.child;let gs=index">
+                    <input type="radio" id="attr1-{{item.ids}}{{item.name}}" [checked]="item.checked" [value]="item.ids"
+                        (click)="changeGS3(i,gs)" [name]="'sgsg1'+item.name">
+                    <label for="attr1-{{item.ids}}{{item.name}}">{{item.name}}-{{item.checked}}</label>
+                    <br>
+                    <!-- name="abc" mention the name to avoid the selection of other radio buttons-->
+                    <!-- id="attr1-{{item.ids}}{{item.name}}" and for="attr1-{{item.ids}}{{item.name}}" make unique to avoid the selection of other places-->
+                </ng-container>
+                <p class="error" *ngIf="gssg.required">Please choose a decision</p>
+                <br>
+                <br>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div *ngFor="let sg of checkedValGs3">
+            {{sg|json}}
+        </div>
+    </div>
+</div>
+
+<button (click)="submitGS3()">Submit validation</button>

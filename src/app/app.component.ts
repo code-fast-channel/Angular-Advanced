@@ -48,6 +48,34 @@ export class AppComponent {
   title: 'Scroll to error Fieldsgsggs',
   selector: 'app-scroll-into-invalid-field-form'
  },
+   {
+  title: 'Reactive form with checkboxgssg',
+  selector: 'app-reactive-form-checkbox-sg'
+ },
+   {
+  title: 'Reactive form with checkboxgssg select all',
+  selector: 'app-reactive-form-selectall-checkbox-sg'
+ },
+   {
+  title: 'radio button',
+  selector: 'app-radio-button-sg'
+ },
+   {
+  title: 'scroll to div',
+  selector: 'app-scroll'
+ },
+   {
+  title: 'app edit value index based',
+  selector: 'app-edit-value-index-based'
+ },
+   {
+  title: 'checkbox with radio crud',
+  selector: 'app-checkbox-with-radio-crud'
+ },
+   {
+  title: 'checkbox with radio crud without reset',
+  selector: 'app-checkbox-with-radio-crud'
+ },
 
 ]
 copyToClipboard(valgs:any) {
