@@ -1,0 +1,34 @@
+<p>edit-value-index-based works!</p>
+<div class="card mt-2" *ngFor="let gs of dataSg;let i=index">
+  <div class="card-header">
+    {{i+1}}) {{gs.title}}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <label>Age</label>
+      {{gs.age}}
+      <button class="btn btn-primary m-2" (click)="Edit('Edit',gs)">Edit</button>
+      <button class="btn btn-danger m-2" (click)="Edit('Delete',gs)">Delete</button>
+      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+  </div>
+
+  <!-- Edit Update code -->
+  <div class="card mt-2" style="height: 197px;position: absolute;top: -8px;width: 100%;" *ngIf="i==selectedIndex">
+    <div class="card-header">
+      {{gs.title}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <label>Title</label>
+        <input type="text" [(ngModel)]="name">
+        <label>Age</label>
+        <input type="text" [(ngModel)]="age">
+        <button class="btn btn-success" (click)="Edit('Update',gs)">Update</button>
+      </blockquote>
+    </div>
+  </div>
+
+</div>
+
+

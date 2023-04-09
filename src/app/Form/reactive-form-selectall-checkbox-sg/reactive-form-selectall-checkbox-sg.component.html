@@ -1,0 +1,16 @@
+<p>reactive-form-selectall-checkbox-sg works!</p>
+<p>reactive-form-checkbox-sg works!</p>
+<form [formGroup]="formName">
+  <label>Select All</label>
+  <input type="checkbox" formControlName="selectAll" (change)="selectAllValue()">
+<ul>
+    <li *ngFor="let item of listSG">
+      <input type="checkbox" [id]="'gsgs'+item.id" [(ngModel)]="item.checked" [ngModelOptions]="{standalone: true}" (change)="result(item,true)">
+      <label [for]="'gsgs'+item.id">{{item.title}}-{{item.age}}</label>
+    </li>
+  </ul>
+  <p class="error" *ngIf="formName.controls?.checkbox?.errors?.required">
+    Checkbox is required, select atleast one value.
+  </p>
+</form>
+{{this.formName.value.checkbox|json}}

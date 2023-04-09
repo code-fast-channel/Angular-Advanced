@@ -21,6 +21,13 @@ import { OnlyDecimal } from './directive/number-only-directive/decimal-number-di
 import { DynamicValidationAddRemovegsComponent } from './Form/dynamic-validation-add-removegs/dynamic-validation-add-removegs.component';
 import { CustomValidationSgComponent } from './Form/custom-validation-sg/custom-validation-sg.component';
 import { ScrollIntoInvalidFieldFormComponent } from './Form/scroll-into-invalid-field-form/scroll-into-invalid-field-form.component';
+import { ReactiveFormCheckboxSgComponent } from './Form/reactive-form-checkbox-sg/reactive-form-checkbox-sg.component';
+import { ReactiveFormSelectallCheckboxSgComponent } from './Form/reactive-form-selectall-checkbox-sg/reactive-form-selectall-checkbox-sg.component';
+import { RadioButtonSgComponent } from './Form/radio-button-sg/radio-button-sg.component';
+import { ScrollComponent } from './general/scroll/scroll.component';
+import { EditValueIndexBasedComponent } from './general/edit-value-index-based/edit-value-index-based.component';
+import { CheckboxWithRadioCrudComponent } from './general/checkbox-with-radio-crud/checkbox-with-radio-crud.component';
+import { CheckboxRadioWithCrudWithoutResetComponent } from './general/checkbox-radio-with-crud-without-reset/checkbox-radio-with-crud-without-reset.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +54,21 @@ import { ScrollIntoInvalidFieldFormComponent } from './Form/scroll-into-invalid-
 
     CustomValidationSgComponent,
 
-    ScrollIntoInvalidFieldFormComponent
+    ScrollIntoInvalidFieldFormComponent,
+
+    ReactiveFormCheckboxSgComponent,
+
+    ReactiveFormSelectallCheckboxSgComponent,
+
+    RadioButtonSgComponent,
+
+    ScrollComponent,
+
+    EditValueIndexBasedComponent,
+
+    CheckboxWithRadioCrudComponent,
+
+    CheckboxRadioWithCrudWithoutResetComponent
   ],
   imports: [
     BrowserModule,
