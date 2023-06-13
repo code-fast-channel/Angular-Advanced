@@ -2,3 +2,14 @@
 .error {
     color:red;
 }
+
+.w-40{
+    width: 40%;
+}
+.red {
+    background-color: red;
+}
+
+.error1 {
+    border: 1px solid red;
+}

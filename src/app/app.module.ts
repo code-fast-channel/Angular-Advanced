@@ -28,7 +28,12 @@ import { ScrollComponent } from './general/scroll/scroll.component';
 import { EditValueIndexBasedComponent } from './general/edit-value-index-based/edit-value-index-based.component';
 import { CheckboxWithRadioCrudComponent } from './general/checkbox-with-radio-crud/checkbox-with-radio-crud.component';
 import { CheckboxRadioWithCrudWithoutResetComponent } from './general/checkbox-radio-with-crud-without-reset/checkbox-radio-with-crud-without-reset.component';
-
+import { CommonTableComponent } from './Reusable-Codes/common-components/common-table/common-table.component';
+import { CommonButtonComponentComponent } from './Reusable-Codes/common-components/common-button-component/common-button-component.component';
+import {ReuseExampleGeneralComponent} from './Reusable-Examples/reuse-example-general/reuse-example-general.component';
+import { CommonFormComponent } from './Reusable-Codes/common-components/common-form/common-form.component';
+import { ReusableFormComponent } from './Reusable-Examples/reusable-form/reusable-form.component';
+import { VarientComponent } from './crudgs/varient/varient.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +73,15 @@ import { CheckboxRadioWithCrudWithoutResetComponent } from './general/checkbox-r
 
     CheckboxWithRadioCrudComponent,
 
-    CheckboxRadioWithCrudWithoutResetComponent
+    CheckboxRadioWithCrudWithoutResetComponent,
+
+    CommonTableComponent,
+
+    CommonButtonComponentComponent,
+    ReuseExampleGeneralComponent,
+    CommonFormComponent,
+    ReusableFormComponent,
+    VarientComponent
   ],
   imports: [
     BrowserModule,

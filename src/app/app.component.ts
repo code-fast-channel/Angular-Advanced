@@ -76,6 +76,14 @@ export class AppComponent {
   title: 'checkbox with radio crud without reset',
   selector: 'app-checkbox-with-radio-crud'
  },
+   {
+  title: 'Reusable codes - Table,button',
+  selector: 'app-reuse-example-general'
+ },
+   {
+  title: 'Reusable codes - Form',
+  selector: 'app-reusable-form'
+ },
 
 ]
 copyToClipboard(valgs:any) {
