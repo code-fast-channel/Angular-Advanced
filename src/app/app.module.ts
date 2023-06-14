@@ -34,6 +34,7 @@ import {ReuseExampleGeneralComponent} from './Reusable-Examples/reuse-example-ge
 import { CommonFormComponent } from './Reusable-Codes/common-components/common-form/common-form.component';
 import { ReusableFormComponent } from './Reusable-Examples/reusable-form/reusable-form.component';
 import { VarientComponent } from './crudgs/varient/varient.component';
+import { CrudDrapDropComponent } from './general/crud-drap-drop/crud-drap-drop.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +82,8 @@ import { VarientComponent } from './crudgs/varient/varient.component';
     ReuseExampleGeneralComponent,
     CommonFormComponent,
     ReusableFormComponent,
-    VarientComponent
+    VarientComponent,
+    CrudDrapDropComponent
   ],
   imports: [
     BrowserModule,
