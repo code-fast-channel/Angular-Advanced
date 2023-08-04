@@ -1,0 +1,44 @@
+<p>advamced-reusable-table-example works!</p>
+<h1>
+    1) Common Table
+  </h1>
+  
+  <h4>Over All Table</h4>
+  <!-- 
+  <app-common-table-new-advanced [HeadArray]="overAllHeadArray" [GridArray]="usersList" (buttonChangeEvent)="buttonAction($event)">
+  </app-common-table-new-advanced>
+  
+  
+  <h4>Table Without checkbox</h4>
+  
+  <app-common-table-new-advanced [HeadArray]="TableWithoutCheckbox" [GridArray]="usersList" (buttonChangeEvent)="buttonAction($event)">
+  </app-common-table-new-advanced>
+  
+  <h4>With checkbox</h4>
+  
+  <app-common-table-new-advanced [HeadArray]="TableWithCheckBox" [GridArray]="usersList" (buttonChangeEvent)="buttonAction($event)">
+  </app-common-table-new-advanced>
+  
+  
+  
+  <h4>With Select All Checkbox</h4>
+  
+  <app-common-table-new-advanced [HeadArray]="TableWithCheckBoxAll" [GridArray]="usersList1" (buttonChangeEvent)="buttonAction($event)">
+  </app-common-table-new-advanced> -->
+  
+  
+  <h4>Custom</h4>
+  
+  <app-common-table-new-advanced [customTemplate]="{ab:itemTemplateRef,abcccc:itemTemplateRef1}" [HeadArray]="custom" [GridArray]="usersList" [dynamicFieldShowHide]="true" (buttonChangeEvent)="buttonAction($event)">
+  </app-common-table-new-advanced>
+
+  <ng-template #itemTemplateRef let-item let-index="index">
+    <!-- Your custom template content here, using 'item' and 'index' -->
+    <div (click)="customClick(item,index)">{{ item.name }} - Index: {{ index }}</div>
+  </ng-template>
+  <ng-template #itemTemplateRef1 let-item let-index="index">
+    <!-- Your custom template content here, using 'item' and 'index' -->
+    <div>{{ item.name }} - Index: {{ index }} toggle</div>
+  </ng-template>
+  <button (click)="open()">openn</button>
+  

@@ -1,0 +1,24 @@
+<p>crud-drap-drop works!</p>
+{{selectedAttribute|json}}
+<p *ngFor="let val of attributeVal" (click)="drapAttribute(val)">{{val.attributeName}}</p>
+<p *ngFor="let val of selectedAttribute;let i=index" (click)="selectAttribute(val,i)">{{val?.aliasName}}</p>
+
+<ng-container *ngIf="selectAttributeValue">
+    <label>name</label>
+    <input [(ngModel)] = "selectAttributeValue.attributeName"><br><br>
+    <div class="form-check form-switch">
+        <input class="form-check-input" [(ngModel)] = "selectAttributeValue.isMandatory" type="checkbox" id="flexSwitchCheckChecked" checked>
+        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+      </div>
+      <ng-container *ngIf="['checkbox','select','dropdown'].includes(selectAttributeValue.type)">
+          <input type="text" [(ngModel)]="tempValue">
+          <ul>
+              <li *ngFor="let val of tempArray;let i=index">
+                {{val.attributeNameValue}}
+              </li>
+          </ul>
+          <button (click)="submitTempValue()">submit checkbox</button>
+      </ng-container>
+      <br>
+      <button (click)="submit()">submit all fields</button>
+</ng-container>

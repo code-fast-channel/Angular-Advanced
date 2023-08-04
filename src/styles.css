@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.error {
+    color:red;
+}
+
+.w-40{
+    width: 40%;
+}
+.red {
+    background-color: red;
+}
+
+.error1 {
+    border: 1px solid red;
+}

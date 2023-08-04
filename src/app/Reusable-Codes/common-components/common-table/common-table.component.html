@@ -1,0 +1,56 @@
+<p>common-table works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <ng-container *ngFor="let head of HeadArray">
+                        <th [width]="head?.customStyle?.width" [height]="head?.customStyle?.height"
+                            [class]="head?.customStyle?.class">
+                            <ng-container *ngIf="head?.type === 'checkBox' && head?.isEnableSelectall">
+                                <input type="checkbox"  [(ngModel)]="isSelectAll"
+                                    (change)="checkBoxEvent('selectAll')">
+                            </ng-container>
+                            {{head.displayName}}
+                        </th>
+                    </ng-container>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of GridArray;let sr=index">
+                    <ng-container *ngFor="let head of HeadArray">
+                        <ng-container [ngSwitch]="head.type">
+                            <td>
+                                <ng-container *ngSwitchCase="'snum'">
+                                    {{sr+1}}
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'checkBox'">
+                                    <input type="checkbox"  [(ngModel)]="item.checked"
+                                        (change)="checkBoxEvent()">
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'date'">
+                                    {{item[head.id]?item[head.id]:'-'}}
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'default'">
+                                    {{item[head.id]?item[head.id]:'-'}}
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'button'">
+                                    <button class="btn btn-sm btn-primary"
+                                        (click)="buttonChange(head.key,item)">{{head.displayName}}</button>
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'buttonGroup'">
+                                    <div class="text-center">
+                                        <ng-container *ngFor="let val of head.buttons">
+                                            <button [class]="val.customStyle.class"
+                                                (click)="buttonChange(val.key,item)">{{val.displayName}}</button>
+                                        </ng-container>
+                                    </div>
+                                </ng-container>
+                            </td>
+                        </ng-container>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

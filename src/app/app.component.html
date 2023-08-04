@@ -1,0 +1,107 @@
+
+  <table class="table mb-5">
+    <thead>
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Title</th>
+        <th scope="col">Selector</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gs of sg;let i= index">
+        <td>{{i+1}}</td>
+         <td>{{gs.title}}</td>
+         <td >{{gs.selector}} <span style="cursor:pointer" class="badge badge-pill badge-primary" (click)="copyToClipboard(gs.selector)">click to copy</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container-fluid">
+    <h1>1) Multiple level checkbox with parent data set value</h1>
+    <app-multi-level-checkbox-setvalue></app-multi-level-checkbox-setvalue>
+  </div>
+  <div class="container-fluid">
+    <h1>2) Multiple level checkbox with parent data</h1>
+    <app-multi-level-checkbox></app-multi-level-checkbox>
+  </div>
+  <div class="container-fluid">
+    <h1>3) Checkbox with search</h1>
+    <app-selectall-checkbox></app-selectall-checkbox>
+  </div>  
+  <div class="container-fluid">
+    <h1>3) Checkbox with maximumsg</h1>
+    <app-maximum-limit-checkbox></app-maximum-limit-checkbox>
+  </div>  
+  <div class="container-fluid">
+    <h1>4) Search data with single inputfieldsgs</h1>
+    <app-search-table-directive></app-search-table-directive>
+  </div>  
+
+  <div class="container-fluid">
+    <h1>5) Ellipsis with titlesg</h1>
+    <app-ellipsis-title></app-ellipsis-title>
+  </div>  
+  <div class="container-fluid">
+    <h1>6) Number only directivegs</h1>
+    <app-number-only-directive></app-number-only-directive>
+  </div>  
+  <div class="container-fluid">
+    <h1>7) Form validation add and remove</h1>
+    <app-dynamic-validation-add-removegs></app-dynamic-validation-add-removegs>
+  </div>  
+  <div class="container-fluid">
+    <h1>8) Custom Validation</h1>
+    <app-custom-validation-sg></app-custom-validation-sg>
+  </div>  
+  <div class="container-fluid">
+    <h1>9) Scroll to error Fieldsgsggs</h1>
+    <app-scroll-into-invalid-field-form></app-scroll-into-invalid-field-form>
+  </div>  
+<div class="container-fluid">
+  <h1>10) Reactive form with checkboxgssg</h1>
+  <app-reactive-form-checkbox-sg></app-reactive-form-checkbox-sg>
+</div>  
+<div class="container-fluid">
+  <h1>11) Reactive form with checkboxgssg select all</h1>
+  <app-reactive-form-selectall-checkbox-sg></app-reactive-form-selectall-checkbox-sg>
+</div>  
+<div class="container-fluid">
+  <h1>12) radio button</h1>
+  <app-radio-button-sg></app-radio-button-sg>
+</div>  
+<div class="container-fluid">
+  <h1>13) app edit value index based</h1>
+  <app-edit-value-index-based></app-edit-value-index-based>
+</div>  
+<div class="container-fluid">
+  <h1>14) checkbox with radio crud</h1>
+  <app-checkbox-with-radio-crud></app-checkbox-with-radio-crud>
+</div>  
+<div class="container-fluid">
+  <h1>15) checkbox with radio crud without reset</h1>
+  <app-checkbox-radio-with-crud-without-reset></app-checkbox-radio-with-crud-without-reset>
+</div>  
+<div class="container-fluid">
+  <h1>16) Reusable codes - Table,button</h1>
+  <app-reuse-example-general></app-reuse-example-general>
+</div>  
+<div class="container-fluid">
+  <h1>17) Reusable codes - Forms</h1>
+  <app-reusable-form></app-reusable-form>
+</div>  
+<div class="container-fluid">
+  <h1>18) Reusable codes - Forms drag drop - new</h1>
+  <app-reusable-form-for-drag-drop></app-reusable-form-for-drag-drop>
+</div>  
+<div class="container-fluid">
+  <h1>19) Reusable codes - Advanced - new</h1>
+  <app-reusable-forms-advanced></app-reusable-forms-advanced>
+</div> 
+<div class="container-fluid">
+  <h1>20) Reusable table - Advanced - new</h1>
+  <app-advamced-reusable-table-example></app-advamced-reusable-table-example>
+</div>   
+<!-- <div class="container-fluid">
+  <h1>20)Drag drop crud</h1>
+  <app-crud-drap-drop></app-crud-drap-drop>
+</div> -->
+<!-- <app-varient></app-varient> -->

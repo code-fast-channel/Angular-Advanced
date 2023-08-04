@@ -1,0 +1,77 @@
+<p>multi-level-checkbox-setvalue works!</p>
+<div *ngFor="let sg of data;let i=index">
+    <input type="checkbox" (change)="changeEvent('selectAll',sg,i)" [(ngModel)]="sg.checked">
+    <label style="font-size: 20px;">{{sg.name}}</label>
+<br>
+<div style="margin-left: 7px;">
+<ng-container *ngFor="let gs of sg.childData">
+    <input type="checkbox" [(ngModel)]="gs.checked" (change)="changeEvent('select',sg,i)">
+    <label>{{gs.childname}}</label>
+    <br>  
+</ng-container>
+</div>
+</div>
+<h2>checked data</h2> - {{selectedDatasg|json}}
+<br>
+<h2>checked data id</h2> - {{selectedDataId|json}}
+<!-- 
+<div id="g_id_onload"
+     data-client_id="354645708101-bulik49mpgokbl1ef3tgq4de8inf5gli.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="localhost:4200"
+     data-nonce=""
+     data-close_on_tap_outside="false"
+     data-itp_support="false">
+</div>
+    
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_blue"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+
+
+
+<div id="g_id_onload"
+data-client_id="354645708101-bulik49mpgokbl1ef3tgq4de8inf5gli.apps.googleusercontent.com"
+data-context="signin"
+data-ux_mode="popup"
+data-callback="siginn"
+data-itp_support="true">
+</div>
+
+<div class="g_id_signin"
+data-type="standard"
+data-shape="pill"
+data-theme="filled_blue"
+data-text="signin_with"
+data-size="medium"
+data-logo_alignment="left">
+</div> -->
+
+
+
+
+
+<div id="g_id_onload"
+     data-client_id="tt"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-callback="signinsucessredirect"
+     data-nonce=""
+     data-auto_select="true"
+     data-itp_support="true">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="pill"
+     data-theme="filled_black"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>

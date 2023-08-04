@@ -1,0 +1,46 @@
+<p>reusable-form works!</p>
+<form [formGroup]='formName'>
+
+
+    <!-- <input formControlName='inputName'>
+    <div *ngIf="formName.get('inputName').errors && submitted">
+    <span class="error" *ngIf ="formName.get('inputName').errors['required']">This field is required</span>
+    <span class="error" *ngIf ="formName.get('inputName').errors['invalidAlphanumeric']">Invalid alpha numeric.only numbers alphabets . are allowed</span>
+    </div> -->
+
+    <!-- Or -->
+
+
+    <!-- <app-common-form [control]="formName.controls.inputName" [submitted]="submitted" label="InputName"
+        inputId="inputName" [optionalErrorMessage]="{'required':'input name is required'}"></app-common-form>
+    <div class="row">
+        <div class="col-6">
+            <app-common-form [control]="formName.controls.firstName" [submitted]="submitted" label="First Name"
+                inputId="firstName"></app-common-form>
+        </div>
+        <div class="col-6">
+            <app-common-form [control]="formName.controls.lastName" [submitted]="submitted" label="Last Name"
+                aliasName="Last Name Field" inputId="lastName"></app-common-form>
+        </div>
+    </div> -->
+
+    <!-- Or -->
+
+    <!-- <div *ngFor="let val of dynamic">
+       <app-common-form [type]="val.type" [control]="val.control" [submitted]="val.submitted" [label]="val.label" [inputId]="val.inputId" [aliasName]="val.aliasName" [optionalErrorMessage]="val.optionalErrorMessage" [customData]="val.customData" (checkboxEmit)="checkedValues($event)"></app-common-form>
+    </div> -->
+
+    <h3>dynamic 1</h3>
+    <div *ngFor="let val of dynamicControls">
+       <app-common-form [type]="val.type" [control]="val?.control" [submitted]="val.submitted" [label]="val?.label" [inputId]="val?.inputId" [aliasName]="val?.aliasName" [optionalErrorMessage]="val.optionalErrorMessage" [customData]="val.customData" (checkboxEmit)="checkedValues($event)"></app-common-form>
+    </div>
+
+
+</form>
+<button (click)="submit()">Submit</button>
+<!-- <p> valid: {{ formName.valid }}</p>
+<p> invalid: {{ formName.invalid }}</p>
+<p> value: {{ formName.value|json }}</p> -->
+<p> valid: {{ dynamicFormGroup.valid }}</p>
+<p> invalid: {{ dynamicFormGroup.invalid }}</p>
+<p> value: {{ dynamicFormGroup.value|json }}</p>

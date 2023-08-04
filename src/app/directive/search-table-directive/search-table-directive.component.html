@@ -1,0 +1,11 @@
+<p>search-table-directive works!</p>
+<label for="name">Name </label>
+<input type="text" id="name" [(ngModel)]="namegs" />
+<label for="cat">age </label>
+<input type="text" id="cat" [(ngModel)]="categorysg" />
+<br>
+<ul>
+  <li *ngFor="let item of list|search1:['title','age']: namegs;">
+    <p>{{item.title}}-{{item.age}}</p>
+  </li>
+</ul>

@@ -1,0 +1,75 @@
+<p>checkbox-radio-with-crud-without-reset works!</p>
+<p>checkbox-with-radio-crud works!</p>
+<div class="d-flex">
+    <div class="card">
+        <div class="card-header">
+            Quote
+        </div>
+        <div class="card-body">
+            <ng-container *ngFor="let sg of listData;let i=index">
+                <input style="margin:12px" type="radio" id="attr12-{{sg.id}}{{sg.title}}" [(ngModel)]="radioValue"
+                    [value]="sg.id" (click)="changeParentEvent(sg,'radio')" [name]="'sgsg12'+sg.title">
+                <label for="attr12-{{sg.id}}{{sg.title}}">{{sg.title}}-{{sg.checked}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Quote
+        </div>
+        <div class="card-body">
+            <ng-container *ngFor="let sg of selectedListData;let i=index">
+                <input style="margin:12px" type="checkbox" id="attr23-{{sg.ids}}{{sg.name}}" [(ngModel)]="sg.checked"
+                    [name]="'sgsg23'+sg.name">
+                <label for="attr23-{{sg.ids}}{{sg.name}}">{{sg.name}}-{{sg.checked}}</label>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="update()">{{isEdit?'Update':'Add'}}</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                name
+            </th>
+            <th>
+                age
+            </th>
+            <th>
+                Child
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let gsgs of addedData;let in=index ">
+            <td>
+                {{gsgs.title}}
+            </td>
+            <td>
+                {{gsgs.age}}
+            </td>
+            <td>
+                <p class="badge" *ngFor="let val of gsgs.child;let childIndex = index">
+                    {{val.name}} <span (click)="Delete('child',{parentIndex:in,childIndex:childIndex})">remove</span>
+                </p>
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="Edit(gsgs)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="Delete('parent',in)">Delete</button>
+            </td>
+        </tr>
+        <div *ngIf="addedData.length==0">
+            no records found
+        </div>
+    </tbody>
+</table>

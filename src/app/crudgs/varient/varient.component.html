@@ -1,0 +1,39 @@
+<p>varient works!</p>
+<div style="display: flex;justify-content: space-around;">
+  
+<div>
+    <ul>
+        <li *ngFor="let item of varientListData" [ngClass]="{'active':item.checked}">{{item|json}}
+
+          <input type="checkbox" [(ngModel)]="item.checked" [disabled]="item.disable" (change)="changeVariant(item)">{{item.name}}-{{item.disable}}
+        </li>
+      </ul>
+</div>
+
+
+<div>
+    <ul>
+      <h2>{{selectedVarient?.name}}</h2>
+        <li *ngFor="let items of selectedVarient?.varientsValue;let iii=index">
+          <p>{{items.valueName}} <span (click)="removeSelectedVarient(iii)">x</span></p>
+        </li>
+      </ul>
+      <button (click)="add()" *ngIf="selectedVarient?.varientsValue?.length>0 && !isEdit">Add</button>
+      <button *ngIf="!selectedVarient">Add disabled</button>
+      <button (click)="update()" *ngIf="selectedVarient?.varientsValue?.length>0 && isEdit">Update</button>
+</div>
+
+
+<div>
+  <ul>
+      <ng-container *ngFor="let items of selectedVarientList;let i=index">
+        <h1>{{items.name}}</h1>-<button (click)="editVariant(items)">Edit</button><button (click)="removeVariant(i)">Delete</button>
+      <li *ngFor="let val of items.varientsValue">
+        <p>{{val.valueName}}</p>
+      </li>
+      </ng-container>
+    </ul>
+</div>
+
+
+</div>
